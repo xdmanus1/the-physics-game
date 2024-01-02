@@ -1,0 +1,39 @@
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloring Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <audio id="popSound" src="pop.mp3"></audio>
+    <audio id="loseSound" src="lose.mp3"></audio>
+    <audio id="winSound" src="win.mp3"></audio>
+    <canvas id="canvas"></canvas>
+    <div id="color-picker"></div>
+    <div id="center">
+        <button id="restart-button">Restart</button>
+        <div id="language-buttons">
+            <button onclick="changeLanguage('hun')">HUN</button>
+            <button onclick="changeLanguage('eng')">ENG</button>
+        </div>
+    </div>
+
+    <div id="win-modal">
+        <h2>Congratulations! You've won!</h2>
+        <button id="win-modal-restart">Play Again</button>
+    </div>
+    <div id="lose-modal">
+        <h2 id="lose-modal-title">You Lose!</h2>
+        <button id="lose-modal-restart">Try Again</button>
+    </div>
+    <div class="star-container"></div>
+    <script src="game.js">
+
+    </script>
+</body>
+
+</html>
