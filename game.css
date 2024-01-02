@@ -1,13 +1,14 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
     height: 100vh;
     margin: 0;
     background-color: rgb(42, 42, 42);
     color: white;
-    font-family: Arial, sans-serif
+    font-family: Arial, sans-serif;
+}
+
+.dark {
+    background-color: rgb(42, 42, 42);
 }
 
 #color-picker {
@@ -15,11 +16,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    margin: 0;
 }
 
 canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 7%;
     background-color: white;
     border: 1px solid white;
     width: 80vmin;
@@ -31,12 +36,11 @@ canvas {
 button {
     height: 50px;
     width: 50px;
-    margin: 5px;
+    margin: 5px !important;
     border-radius: 100%;
     border: 3px solid black;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s cubic-bezier(1, -1, 0.58, 1);
-    ;
     position: relative;
 }
 
@@ -71,7 +75,6 @@ button.selected {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 #restart-button:hover,
@@ -80,7 +83,8 @@ button:hover {
     transform: scale(1.2);
 }
 
-#win-modal {
+#win-modal,
+#lose-modal {
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     position: fixed;
@@ -93,10 +97,10 @@ button:hover {
     z-index: 999;
     text-align: center;
     transition: transform 0.5s ease;
-
 }
 
-#win-modal::before {
+#win-modal::before,
+#lose-modal::before {
     content: "";
     display: block;
     position: fixed;
@@ -108,13 +112,15 @@ button:hover {
     border-radius: 10%;
 }
 
-#win-modal h2 {
+#win-modal h2,
+#lose-modal h2 {
     margin-bottom: 20px;
     color: #ffffff;
     filter: blur(0);
 }
 
-#win-modal button {
+#win-modal button,
+#lose-modal button {
     height: 30px;
     width: 80px;
     margin-top: 10px;
@@ -127,7 +133,8 @@ button:hover {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#win-modal button:hover {
+#win-modal button:hover,
+#lose-modal button:hover {
     background-color: #11235a;
     transform: scale(1.2);
 }
@@ -198,58 +205,6 @@ button:hover {
 #language-buttons button:hover {
     background-color: #11235a;
     transform: scale(1.2);
-}
-
-#lose-modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.487);
-    z-index: 999;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease-out;
-}
-
-#lose-modal h2 {
-    margin-bottom: 20px;
-    color: #ffffff;
-    filter: blur(0);
-}
-
-#lose-modal button {
-    height: 30px;
-    width: 80px;
-    margin-top: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #596fb7;
-    color: white;
-    font-size: 14px;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#lose-modal button:hover {
-    background-color: #11235a;
-    transform: scale(1.2);
-}
-
-#lose-modal::before {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px);
-    border-radius: 10%;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #settings-button {
