@@ -5,8 +5,21 @@ body{
 }
 
 table, th, td {
-    border: 1px solid black;
-  }
+    border: 1px dotted #F6ECA9;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+table{
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.042),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.061),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.075),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.089),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.108),
+  100px 100px 80px rgba(0, 0, 0, 0.15)
+;
+}
 
 a:link {
     color: rgb(0, 109, 168);
@@ -27,4 +40,12 @@ a:hover {
 .center{
     text-align: center;
     margin: auto;
+}
+
+.navbar{
+    background-color: #11235A;
+}
+
+.hunyor{
+    object-fit: cover;
 }
