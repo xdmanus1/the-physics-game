@@ -80,6 +80,24 @@
     </div>
 </nav>
 
+<dialog id="colorModal">
+    <form method="dialog">
+        <label for="color1" class="color-input">Color 1:
+            <input type="color" id="color2" value="#00FF00">
+        </label>
+        <label for="color2" class="color-input">Color 2:
+            <input type="color" id="color3" value="#00FF00">
+        </label>
+        <label for="color3" class="color-input">Color 3:
+            <input type="color" id="color4" value="#0000FF">
+        </label>
+        <label for="color4" class="color-input">Color 4:
+            <input type="color" id="color5" value="#800080">
+        </label>
+        <button id="saveColors" type="submit">Save Colors</button>
+    </form>
+</dialog>
+<button id="openColorModal">Open Color Modal</button>
 <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
     <audio id="popSound" src="pop.mp3"></audio>
     <audio id="loseSound" src="lose.mp3"></audio>
@@ -88,11 +106,14 @@
     <div id="color-picker"></div>
     <div id="center">
         <button id="restart-button">Restart</button>
-        <div id="language-buttons">
-            <button class="hun" onclick="changeLanguage('hun')">HUN</button>
-            <button onclick="changeLanguage('eng')">ENG</button>
+        <div id="language-dropdown">
+            <label for="language">Select Language:</label>
+            <select id="language" onchange="changeLanguage(this.value)">
+                <option value="hun">HUN</option>
+                <option value="eng">ENG</option>
+                <!-- Add more language options as needed -->
+            </select>
         </div>
-    </div>
 
     <div id="win-modal">
         <h2>Congratulations! You've won!</h2>
@@ -103,6 +124,7 @@
         <button id="lose-modal-restart">Try Again</button>
     </div>
     <div class="star-container"></div>
+
     <script src="game.js"></script>
     <script>
         // Toggle the visibility of the dropdown on mobile

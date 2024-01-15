@@ -5,6 +5,10 @@ const restartButton = document.getElementById('restart-button');
 const winModal = document.getElementById('win-modal');
 const winModalRestartButton = document.getElementById('win-modal-restart');
 const starContainer = document.querySelector('.star-container');
+const colorModal = document.getElementById('colorModal');
+const openColorModalButton = document.getElementById('openColorModal');
+const saveColorsButton = document.getElementById('saveColors');
+const colorInputs = document.querySelectorAll('.color-input input');
 
 let currentColor = 1;
 let gameOver = false;
@@ -29,7 +33,7 @@ const map = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
-const colors = [
+let colors = [
     '#000000',
     '#FF0000',
     '#00FF00',
@@ -227,21 +231,25 @@ winModalRestartButton.addEventListener('click', function () {
 let currentLanguage = 'eng';
 let languageText = {};
 
-function changeLanguage(language) {
-    currentLanguage = language;
+function changeLanguage(selectedLanguage) {
+    currentLanguage = selectedLanguage;
     setLanguageText(currentLanguage);
+    applyColors(); // Update modal button text and colors when language changes
 }
+
 
 function updateButtonText() {
     restartButton.textContent = languageText[currentLanguage].restartButtonText;
     winModalRestartButton.textContent = languageText[currentLanguage].restartButtonText;
     loseModalRestartButton.textContent = languageText[currentLanguage].restartButtonText;
+    color1.textContent = languageText[currentLanguage].colors;
     popSound.play();
 }
 
 function updateModalText() {
     document.getElementById('win-modal').getElementsByTagName('h2')[0].textContent = languageText[currentLanguage].winModalTitle;
     document.getElementById('lose-modal-title').textContent = languageText[currentLanguage].loseModalTitle;
+    document.getElementById('color1').textContent = languageText[currentLanguage].color;
     // Add more lines if you have other text elements in the lose modal
 }
 
@@ -305,4 +313,33 @@ function closeLoseModal() {
 loseModalRestartButton.addEventListener('click', function () {
     closeLoseModal();
     restartGame();
+});
+
+openColorModalButton.addEventListener('click', () => {
+    colorInputs.forEach((input, index) => {
+        input.value = colors[index];
+    });
+    colorModal.showModal();
+});
+
+function applyColors() {
+    // Update the second color in the colors array based on the value of the first color
+    colors[1] = colorInputs[0].value;
+
+    // Apply the updated colors to the color buttons and redraw the map
+    colorButtons.forEach((button, index) => {
+        button.style.backgroundColor = colors[index + 1];
+    });
+    drawMap();
+}
+
+saveColorsButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    colorInputs.forEach((input, index) => {
+        if (index !== 0) { // Allow changing only for indices 1, 2, 3, and 4
+            colors[index] = input.value;
+        }
+    });
+    colorModal.close();
+    applyColors(); // Apply the updated colors when the modal is closed
 });

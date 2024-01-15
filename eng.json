@@ -4,5 +4,6 @@
     "restartButtonText": "Restart",
     "title": "The Physics Game",
     "maker": "Made by: Karsa Hunor Ákos",
-    "loseModalTitle": "You Lose!"
+    "loseModalTitle": "You Lose!",
+    "color": "Szín"
 }
