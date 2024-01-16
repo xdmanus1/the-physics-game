@@ -34,13 +34,12 @@ const map = [
 ];
 
 let colors = [
-    '#000000',
     '#FF0000',
     '#00FF00',
     '#0000FF',
     '#800080'
 ];
-
+const baseColor = '#000000';
 const cellSize = 50;
 const mapWidth = map[0].length;
 const mapHeight = map.length;
@@ -49,7 +48,8 @@ canvas.width = cellSize * mapWidth;
 canvas.height = cellSize * mapHeight;
 
 function drawCell(x, y) {
-    ctx.fillStyle = colors[map[y][x]];
+    const cellColorIndex = map[y][x];
+    ctx.fillStyle = cellColorIndex === 0 ? baseColor : colors[cellColorIndex - 1];
     ctx.fillRect(x * cellSize + 1, y * cellSize + 1, cellSize - 2, cellSize - 2);
 }
 
@@ -106,6 +106,8 @@ function fillCell(x, y, color) {
 
     map[y][x] = color;
     drawCell(x, y);
+
+
 
     if (checkGameOver(x, y, color)) {
         gameOver = true;
@@ -173,15 +175,16 @@ drawMap();
 // Create color choosing buttons
 const colorButtons = [];
 const popSound = document.getElementById('popSound');
-for (let i = 1; i < colors.length; i++) {
+
+for (let i = 1; i <= colors.length; i++) {
     const button = document.createElement('button');
-    button.style.backgroundColor = colors[i];
+    button.style.backgroundColor = colors[i - 1]; // Adjust index to start from 0
     const span = document.createElement('span');
     span.textContent = colorLimits[i];
     button.appendChild(span);
 
     button.addEventListener('click', function () {
-        if (colorLimits[i] > 0) {
+        if (colorLimits[i] > 0 && i !== 1) { // Check that the color is not black (index 1)
             currentColor = i;
             popSound.play();
             // Remove 'selected' class from all buttons
@@ -322,13 +325,16 @@ openColorModalButton.addEventListener('click', () => {
     colorModal.showModal();
 });
 
+
 function applyColors() {
-    // Update the second color in the colors array based on the value of the first color
-    colors[1] = colorInputs[0].value;
+    // Update colors in the colors array based on the input values
+    colorInputs.forEach((input, index) => {
+        input.value = colors[index + 1] === '#000000' ? '#FFFFFF' : colors[index + 1];
+    });
 
     // Apply the updated colors to the color buttons and redraw the map
     colorButtons.forEach((button, index) => {
-        button.style.backgroundColor = colors[index + 1];
+        button.style.backgroundColor = colors[index];
     });
     drawMap();
 }
@@ -336,9 +342,7 @@ function applyColors() {
 saveColorsButton.addEventListener('click', (event) => {
     event.preventDefault();
     colorInputs.forEach((input, index) => {
-        if (index !== 0) { // Allow changing only for indices 1, 2, 3, and 4
-            colors[index] = input.value;
-        }
+        colors[index] = input.value === '#000000' ? '#FFFFFF' : input.value;
     });
     colorModal.close();
     applyColors(); // Apply the updated colors when the modal is closed
