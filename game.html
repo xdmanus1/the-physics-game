@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coloring Game</title>
     <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/adb16ce155.js" crossorigin="anonymous"></script>
 
     <style>
         nav.navbar {
@@ -22,12 +24,30 @@
 </head>
 
 <body>
-
-<nav class="navbar">
-<button class="navbutton"><a href="index.html">Fő oldal</a></button>
-<button class="navbutton"><b><a href="game.html" >Játék</a></b></button>
-<button class="navbutton"><a href="about.html" >Készítők</a></button>
-</nav>
+    <div id="overlay"></div>
+    <nav class="navbar">
+        <a class="navbutton navtext" href="index.html">The Physics Project</a>
+        <div class="navbutcont">
+            <button id="gone" class="navbutton"><b><a class="navbutton" href="index.html">Fő oldal</a></b></button>
+            <button id="gone" class="navbutton"><a class="navbutton" href="game.html">Játék</a></button>
+            <button id="gone" class="navbutton"><a class="navbutton" href="about.html">Készítők</a></button>
+            <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+            <label for="checkbox1">
+                <div class="hamburger hamburger1">
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                    <span class="bar bar3"></span>
+                    <span class="bar bar4"></span>
+                </div>
+            </label>
+        </button>
+        </div>
+        <div id="myLinks">
+            <button  class="navbutton"><b><a class="navbutton" href="index.html">Fő oldal</a></b></button>
+            <button  class="navbutton"><a class="navbutton" href="game.html">Játék</a></button>
+            <button class="navbutton"><a class="navbutton" href="about.html">Készítők</a></button>
+        </div>
+    </nav>
 <dialog class="colmod" id="colorModal">
     <form method="dialog">
         <label for="color2" class="color-input">Color 1:
@@ -45,7 +65,6 @@
         <button class="color-save" id="saveColors" type="submit"><b>Save Colors</b></button>
     </form>
 </dialog>
-<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
     <audio id="popSound" src="sounds/pop.mp3"></audio>
     <audio id="loseSound" src="sounds/lose.mp3"></audio>
     <audio id="winSound" src="sounds/win.mp3"></audio>
@@ -55,7 +74,10 @@
     <div id="center">
         
         <button id="restart-button">Restart</button>
+        <div class="butos">
         <button class="colormodal" id="openColorModal"><i class="fa-solid fa-palette"></i></button>
+        <button class="colormodal" id="muteButton"><i id="muteIcon" class="fas fa-volume-up"></i></button> 
+    </div> 
         <div class="lang-drop" id="language-dropdown">
             <select id="language" onchange="changeLanguage(this.value)">
                 <option class="langs" value="eng">ENG</option>
@@ -74,17 +96,38 @@
 
     <script src="game.js"></script>
     <script>
-        // Toggle the visibility of the dropdown on mobile
-        document.getElementById('toggle-button').addEventListener('click', function () {
-            document.querySelector('.navbar-dropdown').classList.toggle('hidden');
+        document.addEventListener("DOMContentLoaded", function() {
+        const popSound = document.getElementById("popSound");
+        const loseSound = document.getElementById("loseSound");
+        const winSound = document.getElementById("winSound");
+        const muteButton = document.getElementById("muteButton");
+        const muteIcon = document.getElementById("muteIcon");
+
+        // Check if there is a stored mute state
+        const isMuted = localStorage.getItem("isMuted") === "true";
+        setMuteState(isMuted);
+
+        // Toggle mute state on button click
+        muteButton.addEventListener("click", function() {
+            const newMuteState = !popSound.muted;
+            setMuteState(newMuteState);
         });
-        tailwind.config = {
-  darkMode: 'class',
-  theme: {
-    extend: {}
-  }
-}
+
+        // Function to set mute state and update button text
+        function setMuteState(isMuted) {
+            popSound.muted = isMuted;
+            loseSound.muted = isMuted;
+            winSound.muted = isMuted;
+
+            // Update the mute button icon based on the mute state
+            muteIcon.className = isMuted ? "fas fa-volume-up" : "fas fa-volume-mute";
+
+            // Store mute state in local storage
+            localStorage.setItem("isMuted", isMuted);
+        }
+    });
     </script>
+        <script src="nav.js"></script>
 </body>
 
 </html>

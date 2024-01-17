@@ -7,12 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="navbar">
-        <!--NAVBAR || <b> is used when you're on the site-->
-        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="game.html">A játék</a> | <a href="devlog.html">Fejlesztői napló</a> | <a href="about.html"><b>Névjegy</b></a>
-        <hr>
-    </div>
-    <h1 class="center">A fejlesztőkről</h1>
+    <nav class="navbar">
+        <a class="navbutton navtext" href="index.html">The Physics Project</a>
+        <div class="navbutcont">
+            <button id="gone" class="navbutton"><b><a class="navbutton" href="index.html">Fő oldal</a></b></button>
+            <button id="gone" class="navbutton"><a class="navbutton" href="game.html">Játék</a></button>
+            <button id="gone" class="navbutton"><a class="navbutton" href="about.html">Készítők</a></button>
+            <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+            <label for="checkbox1">
+                <div class="hamburger hamburger1">
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                    <span class="bar bar3"></span>
+                    <span class="bar bar4"></span>
+                </div>
+            </label>
+        </button>
+        </div>
+        <div id="myLinks">
+            <button  class="navbutton"><b><a class="navbutton" href="index.html">Fő oldal</a></b></button>
+            <button  class="navbutton"><a class="navbutton" href="game.html">Játék</a></button>
+            <button class="navbutton"><a class="navbutton" href="about.html">Készítők</a></button>
+        </div>
+    </nav>
+    <div id="overlay"></div>
+        <h1 class="center" style="margin-top: 10px;">A fejlesztőkről</h1>
     <br>
     <table class="center">
         <tr>
@@ -20,13 +39,14 @@
             <th>Karsa Hunor Ákos</th>
         </tr>
         <tr>
-            <td>image</td>
-            <td>image</td>
+            <td><img src="imgs/pfp.jpg"></td>
+            <td><img src="imgs/hunor.png" height="256px" width="256px" style="object-fit: cover;"></td>
         </tr>
         <tr>
             <td>webdev</td>
             <td>gamedev</td>
         </tr>
     </table>
+    <script src="nav.js"></script>
 </body>
 </html>

@@ -1,30 +1,246 @@
-body{
-    background-color: rgb(42,42,42);
+body {
+    background-color: rgb(42, 42, 42);
     color: white;
     font-family: arial;
+    margin: 0;
+    font-family: "Gill Sans", sans-serif;
 }
 
-table, th, td {
-    border: 1px solid black;
-  }
-
-a:link {
-    color: rgb(0, 109, 168);
-    background-color: transparent;
-    text-decoration: none;
-}
-a:visited {
-    color: rgb(0, 109, 168);
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: rgb(134, 212, 254);
-    background-color: transparent;
-    text-decoration: underline;
+h1 {
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 16px;
+    margin-bottom: 10px !important;
 }
 
-.center{
+
+
+h1:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.center {
     text-align: center;
     margin: auto;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: auto;
+    background-color: aliceblue;
+    height: 50px;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navtext {
+    margin-left: 5%;
+    text-align: left;
+    gap: 100px;
+    font-size: large;
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbutcont {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.navbutton {
+    color: black;
+    border-radius: 20%;
+    width: auto;
+    border: 0;
+    font-family: "Gill Sans", sans-serif;
+    font-size: large;
+    padding: 5px;
+    background-color: transparent;
+    padding: 5px, 5px;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.navbutton:hover {
+    -webkit-animation: scale-up-center 0.4s ease-in-out;
+    animation: scale-up-center 0.4s ease-in-out;
+    background-color: transparent;
+}
+
+
+
+.navbutton:after {
+    border-radius: 10px;
+    background: none repeat scroll 0 0 transparent;
+    bottom: -1;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #000000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #gone {
+        display: none;
+    }
+}
+
+.hamburger {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.hamburger .bar {
+    padding: 0;
+    width: 30px;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+}
+
+.bar1 {
+    top: 0;
+}
+
+.bar2,
+.bar3 {
+    top: 13.5px;
+}
+
+.bar3 {
+    right: 0;
+}
+
+.bar4 {
+    bottom: 0;
+}
+
+.checkbox1:checked+label>.hamburger1>.bar1 {
+    transform: rotate(45deg);
+    transform-origin: 5%;
+    width: 41px
+}
+
+.checkbox1:checked+label>.hamburger1>.bar2 {
+    transform: translateX(-40px);
+    background-color: transparent;
+}
+
+.checkbox1:checked+label>.hamburger1>.bar3 {
+    transform: translateX(40px);
+    background-color: transparent;
+}
+
+.checkbox1:checked+label>.hamburger1>.bar4 {
+    transform-origin: 5%;
+    transform: rotate(-45deg);
+    width: 41px;
+}
+
+.checkbox1 {
+    display: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0);
+    filter: blur(0);
+    transition: filter 0.5s ease, backdrop-filter 0.5s ease;
+    pointer-events: none;
+}
+
+
+
+#overlay.show {
+    filter: blur(5px);
+    pointer-events: auto;
+}
+
+#myLinks {
+    visibility: hidden;
+    transform: translateY(-100%);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-200%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.5s ease, visibility 0.5s ease;
+}
+
+#myLinks.show {
+    visibility: visible;
+    transform: translateX(-50%) translateY(10%);
+}
+
+
+
+
+#myLinks a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    filter: blur(0);
+}
+
+
+
+
+
+@keyframes dd {
+    0% {
+
+        backdrop-filter: blur(0px);
+    }
+
+    100% {
+
+        backdrop-filter: blur(10px);
+    }
 }

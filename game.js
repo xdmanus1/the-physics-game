@@ -184,7 +184,7 @@ for (let i = 1; i <= colors.length; i++) {
     button.appendChild(span);
 
     button.addEventListener('click', function () {
-        if (colorLimits[i] > 0 && i !== 1) { // Check that the color is not black (index 1)
+        if (colorLimits[i] > 0 && i !== 0) { // Check that the color is not black (index 1)
             currentColor = i;
             popSound.play();
             // Remove 'selected' class from all buttons
@@ -245,7 +245,7 @@ function updateButtonText() {
     restartButton.textContent = languageText[currentLanguage].restartButtonText;
     winModalRestartButton.textContent = languageText[currentLanguage].restartButtonText;
     loseModalRestartButton.textContent = languageText[currentLanguage].restartButtonText;
-    color1.textContent = languageText[currentLanguage].colors;
+    color2.textContent = languageText[currentLanguage].colors;
     popSound.play();
 }
 
