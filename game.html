@@ -11,35 +11,37 @@
 
 <body>
     <div class="navbar">
-        <!--NAVBAR || <b> is used when you're on the site
-        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="game.html"><b>A játék</b></a> | <a href="devlog.html">Fejlesztői napló</a> | <a href="about.html">Névjegy</a>
-        <hr>-->
+        <!--NAVBAR || <b> is used when you're on the site-->
+        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="game.html"><b>A játék</b></a> | <a href="about.html">Névjegy</a>
+        <hr>
     </div>
-    <audio id="popSound" src="pop.mp3"></audio>
-    <audio id="loseSound" src="lose.mp3"></audio>
-    <audio id="winSound" src="win.mp3"></audio>
-    <canvas id="canvas"></canvas>
-    <div id="color-picker"></div>
-    <div id="center">
-        <button id="restart-button">Restart</button>
-        <div id="language-buttons">
-            <button onclick="changeLanguage('hun')">HUN</button>
-            <button onclick="changeLanguage('eng')">ENG</button>
+    <div class="game">
+        <audio id="popSound" src="pop.mp3"></audio>
+        <audio id="loseSound" src="lose.mp3"></audio>
+        <audio id="winSound" src="win.mp3"></audio>
+        <canvas id="canvas"></canvas>
+        <div id="color-picker"></div>
+        <div id="center">
+            <button id="restart-button">Restart</button>
+            <div id="language-buttons">
+                <button onclick="changeLanguage('hun')">HUN</button>
+                <button onclick="changeLanguage('eng')">ENG</button>
+            </div>
         </div>
-    </div>
 
-    <div id="win-modal">
-        <h2>Congratulations! You've won!</h2>
-        <button id="win-modal-restart">Play Again</button>
-    </div>
-    <div id="lose-modal">
-        <h2 id="lose-modal-title">You Lose!</h2>
-        <button id="lose-modal-restart">Try Again</button>
-    </div>
-    <div class="star-container"></div>
-    <script src="game.js">
+        <div id="win-modal">
+            <h2>Congratulations! You've won!</h2>
+            <button id="win-modal-restart">Play Again</button>
+        </div>
+        <div id="lose-modal">
+            <h2 id="lose-modal-title">You Lose!</h2>
+            <button id="lose-modal-restart">Try Again</button>
+        </div>
+        <div class="star-container"></div>
+        <script src="game.js">
 
-    </script>
+        </script>
+    </div>
 </body>
 
 </html>
