@@ -11,24 +11,32 @@
 <body>
     <div class="navbar">
         <!--NAVBAR || <b> is used when you're on the site-->
-        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="game.html">A játék</a> | <a href="about.html"><b>Névjegy</b></a>
+        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="game.html">A játék</a> | <a id="myBtn">Névjegy</a>
         <hr>
     </div>
     <h1 class="center">A fejlesztőkről</h1>
     <br>
-    <table class="center">
-        <tr>
-            <th>Gocsál Mátyás</th>
-            <th>Karsa Hunor Ákos</th>
-        </tr>
-        <tr>
-            <td><img src="imgs/pfp.jpg"></td>
-            <td><img src="imgs/hunor.png" class="hunyor" width="256px" height="256px"></td>
-        </tr>
-        <tr>
-            <td>webdev</td>
-            <td>gamedev</td>
-        </tr>
-    </table>
+    <!-- ! Do not touch this! This is instead of about.html and I'm just happy this thing finally works. GM-->
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close"></span>
+        <table class="center">
+            <tr>
+                <th>Gocsál Mátyás</th>
+                <th>Karsa Hunor Ákos</th>
+            </tr>
+            <tr>
+                <td><img src="imgs/pfp.jpg"></td>
+                <td><img src="imgs/hunor.png" class="hunyor" width="256px" height="256px"></td>
+            </tr>
+            <tr>
+                <td>webdev</td>
+                <td>gamedev</td>
+            </tr>
+        </table>
+        <p class="center">Kilépéshez kattints ki!</p>
+    </div>
+    </div>
+    <script src="about.js"></script>
 </body>
 </html>
