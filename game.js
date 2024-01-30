@@ -134,13 +134,10 @@ function restartGame() {
     drawMap();
     updateColorButtonLabels();
 }
+// old function updateColorButtonLabels() { for (let i = 1; i < colors.length; i++) { const button = colorPicker.querySelector(button:nth-child(${i})); button.querySelector('span').textContent = colorLimits[i]; } }
 
-function updateColorButtonLabels() {
-    for (let i = 1; i < colors.length; i++) {
-        const button = colorPicker.querySelector(`button:nth-child(${i})`);
-        button.querySelector('span').textContent = colorLimits[i];
-    }
-}
+
+function updateColorButtonLabels() { const buttons = colorPicker.querySelectorAll('button'); buttons.forEach((button, i) => { button.querySelector('span').textContent = colorLimits[i + 1]; }); }
 
 function openWinModal() {
     winModal.style.display = 'block';
