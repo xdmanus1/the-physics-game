@@ -71,7 +71,7 @@ h1:hover {
     background-color: transparent;
     padding: 5px, 5px;
     text-decoration: none;
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 
 .navbutton:hover {
@@ -190,7 +190,9 @@ a:hover:after {
 
 
 #overlay.show {
-    filter: blur(5px);
+    background-color: rgba(68, 109, 114, 0.751);
+    z-index: 200;
+    backdrop-filter: blur(5px) !important;
     pointer-events: auto;
 }
 
@@ -224,6 +226,8 @@ a:hover:after {
     text-align: center;
     display: block;
     filter: blur(0);
+    z-index: 1200;
+    font-size: 1.5rem;
 }
 
 
@@ -240,4 +244,85 @@ a:hover:after {
 
         backdrop-filter: blur(10px);
     }
+}
+
+.submitbtn {
+    height: 40px;
+    width: 70px;
+    margin-top: 10px !important;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #596fb7;
+    color: white;
+    font-size: 16px;
+    border: none;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease, transform 0.3s cubic-bezier(1, -1, 0.58, 1);
+
+}
+
+.opendial {
+    height: 40px;
+    width: 115px;
+    margin-top: 10px !important;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #596fb7;
+    color: white;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s cubic-bezier(1, -1, 0.58, 1);
+}
+
+.passin {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 88px;
+    transition: border-color 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+    .passin {
+        width: calc(50% - 20px);
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 88px;
+        transition: border-color 0.3s;
+        font-size: smaller;
+    }
+}
+
+.close {
+    font-size: 2.5rem;
+    pointer-events: stroke;
+    display: block;
+}
+
+.modaled {
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+
+    height: auto;
+    width: 20vh !important;
+    margin-bottom: 50vh;
+}
+
+.modaleds {
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+
+    width: 20vh !important;
+    margin-bottom: 50vh;
 }

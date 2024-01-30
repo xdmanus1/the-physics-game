@@ -17,3 +17,20 @@
         align-content: stretch;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .navbutton {
+        display: none !important;
+    }
+
+    .navbutton1 {
+        display: block;
+        font-size: 1.5rem;
+        background-color: transparent !important;
+    }
+
+}
+
+.navbutton1 {
+    font-size: 1.5rem !important;
+}

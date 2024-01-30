@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coloring Game</title>
     <link rel="stylesheet" href="game.css">
@@ -25,9 +26,6 @@
             backdrop-filter: blur(5px) !important;
         }
         #mylinks {padding-left: -10px;}
-        .modaled {
-    margin-bottom: 50vh;
-}
     </style>
 </head>
 
@@ -105,13 +103,12 @@
 
   
     <!-- Modal dialog -->
-    <dialog id="passwordDialog" class="modaled">
+    <dialog id="passwordDialog" class="modaleds">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Enter Password</h2>
       <input class="passin" type="password" id="passwordInput">
       <button class="submitbtn" onclick="checkPassword()">Submit</button>
     </dialog>
-  
   
     <script>
       const dialog = document.getElementById("passwordDialog");
@@ -122,6 +119,10 @@
       showDialogButton.addEventListener("click", () => {
         dialog.showModal();
       });
+      function closeModal() {
+        document.getElementById('overlay').style.display = 'flex';
+        dialog.close();
+      }
   
       // "Close" button closes the dialog
       closeButton.addEventListener("click", () => {
@@ -151,7 +152,7 @@
 
 
 
-    <script src="game.js"></script>
+    <script src="gameasd.js"></script>
 
     <script src="nav.js"></script>
 </body>

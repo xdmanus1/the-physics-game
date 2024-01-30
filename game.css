@@ -63,6 +63,27 @@ body {
     background-color: #596fb7;
 }
 
+#passwordDialog {
+    background-color: rgba(133, 133, 133, 0.411);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    border-color: transparent;
+    color: white;
+    transform: scale(1.1);
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 30%;
+    text-align: center;
+    box-shadow:
+        2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02),
+        6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028),
+        12.5px 12.5px 10px rgba(255, 255, 255, 0.035),
+        22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042),
+        41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05),
+        100px 100px 80px rgba(255, 255, 255, 0.07);
+}
+
 .colmod {
     background-color: rgba(133, 133, 133, 0.411);
     backdrop-filter: blur(3px);
@@ -122,39 +143,7 @@ body {
     height: 50px;
 }
 
-.navbutton {
-    color: black;
-    border-radius: 20%;
-    width: auto;
-    border: 0;
-    font-family: "Gill Sans", sans-serif;
-    font-size: large;
-    background-color: transparent;
-    text-decoration: none;
-    transform: scale(1.1);
-}
 
-.navbutton:hover {
-    -webkit-animation: scale-up-center 0.4s ease-in-out;
-    animation: scale-up-center 0.4s ease-in-out;
-    background-color: transparent;
-}
-
-
-
-.navbutton:after {
-    border-radius: 10px;
-    background: none repeat scroll 0 0 transparent;
-    bottom: -1;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #000000;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
 
 .butos {
     display: flex;
@@ -343,4 +332,18 @@ button:hover {
     50% {
         opacity: 0.4;
     }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .navbutton {
+        display: none;
+    }
+
+    .navbutton1 {
+        display: block;
+        font-size: 1.5rem;
+        background-color: transparent !important;
+    }
+
 }
