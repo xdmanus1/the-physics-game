@@ -322,7 +322,7 @@ openColorModalButton.addEventListener('click', () => {
     colorModal.showModal();
 });
 
-
+var documentElementGetByBullsiht
 function applyColors() {
     // Update colors in the colors array based on the input values
     colorInputs.forEach((input, index) => {
@@ -332,6 +332,8 @@ function applyColors() {
     // Apply the updated colors to the color buttons and redraw the map
     colorButtons.forEach((button, index) => {
         button.style.backgroundColor = colors[index];
+        button.style.backgroundColor = bodyBackgroundColor;
+    button.style.filter = "invert(100%)";
     });
     drawMap();
 }
