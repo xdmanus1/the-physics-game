@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coloring Game</title>
-    <link rel="stylesheet" href="game.css">
+    <!--we don't need this coz there is newgame.css :D <link rel="stylesheet" href="game.css">-->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="newgame.css">
     <script src="https://kit.fontawesome.com/adb16ce155.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 <body>
     <div class="navbar">
         <!--NAVBAR || <b> is used when you're on the site-->
-        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="newgame.html"><b>A játék</b></a> | <a id="myBtn">Névjegy</a>
+        <b>The Physics Game</b> | <a href="index.html">Főoldal</a> | <a href="newgame.html"><b>A játék</b></a> | <a id="myBtn">Névjegy</a> | <a onclick="checkPassword()" id="myBtn">Dev Mode</a>
         <hr>
     </div>
     <div class="game">
@@ -62,7 +62,7 @@
         <h2 id="lose-modal-title">You Lose!</h2>
         <button id="lose-modal-restart">Try Again</button>
     </div>
-    <a href="dev.html">asd</a>
+    
     
     <div class="star-container"></div>
 
@@ -127,6 +127,7 @@
         </div>
         </div>
         <script src="about.js"></script>
+        <script src="devmode.js"></script>
 </body>
 
 </html>

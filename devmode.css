@@ -1,0 +1,4 @@
+/*! I know I could have done it in style.css or newgame.css but for some odd reason it didn't work so I had to make a seperate CSS file for this. */
+.devtext{
+    color: red !important;
+}
