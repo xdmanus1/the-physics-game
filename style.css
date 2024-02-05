@@ -336,9 +336,15 @@ a:hover:after {
     width: 80%;
     margin: 1rem auto;
     padding: 20px 1rem 1rem 1rem;
-    background-color: red;
+    background-color: rgba(0, 166, 255, 0.293);
     border-radius: 35px;
-
+    box-shadow:
+        2.8px 2.8px 5.3px rgba(255, 255, 255, 0.053),
+        6.7px 6.7px 12.8px rgba(255, 255, 255, 0.077),
+        12.5px 12.5px 24px rgba(255, 255, 255, 0.095),
+        22.3px 22.3px 42.9px rgba(255, 255, 255, 0.113),
+        41.8px 41.8px 80.2px rgba(255, 255, 255, 0.137),
+        100px 100px 192px rgba(255, 255, 255, 0.19);
 }
 
 .boxes {
@@ -384,6 +390,7 @@ a:hover:after {
     border-radius: 0px !important;
     margin-bottom: 0px !important;
     padding: 5px;
+    font-size: 1.3rem;
 }
 
 .textindabox:hover {
