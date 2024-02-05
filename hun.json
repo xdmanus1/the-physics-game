@@ -4,5 +4,10 @@
     "restartButtonText": "Újrakezdés",
     "title": "A fizika játék",
     "maker": "Készített: Karsa Hunor Ákos",
-    "loseModalTitle": "Vesztettél!"
+    "loseModalTitle": "Vesztettél!",
+    "colorText": "Szín:",
+    "colorLabel": "Szín:",
+    "passwordDialogTitle": "Add meg a jelszavat",
+    "submit": "Küldés",
+    "saveColor": "Szín mentése"
 }

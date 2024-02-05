@@ -233,27 +233,44 @@ winModalRestartButton.addEventListener('click', function () {
 
 let currentLanguage = 'eng';
 let languageText = {};
-
+document.getElementById('showDialogButton').addEventListener('click', changeLanguage);
+document.getElementById('submit');
+document.getElementById('saveColors');
 function changeLanguage(selectedLanguage) {
     currentLanguage = selectedLanguage;
     setLanguageText(currentLanguage);
     applyColors(); // Update modal button text and colors when language changes
 }
 
-
+function updateTextContent(className, textKey) {
+    const elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        // Check if the element is a label
+        if (element.tagName.toLowerCase() === 'label') {
+            // Update only the text content of the label
+            element.childNodes[0].textContent = languageText[currentLanguage][textKey];
+        } else {
+            // Update text content for other elements
+            element.textContent = languageText[currentLanguage][textKey];
+        }
+    }
+}
 function updateButtonText() {
     restartButton.textContent = languageText[currentLanguage].restartButtonText;
     winModalRestartButton.textContent = languageText[currentLanguage].restartButtonText;
     loseModalRestartButton.textContent = languageText[currentLanguage].restartButtonText;
-    color2.textContent = languageText[currentLanguage].colors;
+    submit.textContent = languageText[currentLanguage].submit;
+    saveColors.textContent = languageText[currentLanguage].saveColor;
+    updateTextContent('color-input', 'colorText');
     popSound.play();
 }
 
 function updateModalText() {
     document.getElementById('win-modal').getElementsByTagName('h2')[0].textContent = languageText[currentLanguage].winModalTitle;
     document.getElementById('lose-modal-title').textContent = languageText[currentLanguage].loseModalTitle;
-    document.getElementById('color1').textContent = languageText[currentLanguage].color;
-    // Add more lines if you have other text elements in the lose modal
+    document.getElementById('passwordDialog').getElementsByTagName('h2')[0].textContent = languageText[currentLanguage].passwordDialogTitle;
+    updateTextContent('color-input-label', 'colorLabel');
 }
 
 async function loadLanguageFile(language) {
@@ -271,7 +288,6 @@ async function setLanguageText(language) {
     languageText[language] = await loadLanguageFile(language);
     updateButtonText();
     updateModalText();
-    updateTitleAndAuthor();
 }
 
 setLanguageText(currentLanguage);

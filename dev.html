@@ -9,34 +9,16 @@
     <link rel="stylesheet" href="game.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/adb16ce155.js" crossorigin="anonymous"></script>
-
-    <style>
-        nav.navbar {
-            position: sticky;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-        .show1 {
-            background-color: rgba(68, 109, 114, 0.751);
-            z-index: 1000;
-            backdrop-filter: blur(5px) !important;
-        }
-        #mylinks {padding-left: -10px;}
-    </style>
 </head>
 
 <body>
-    <div id="overlay"></div>
+    <!-- NAVBAR -->
     <nav class="navbar">
         <a class="navtext" href="index.html">The Physics Project</a>
         <div class="navbutcont">
-            <a class="navbutton" href="index.html">Fő oldal</a>
-            <a class="navbutton" href="game.html"><b>Játék</b></a>
-            <a class="navbutton" href="about.html">Készítők</a>
+                        <a id="gone" class="navbutton" href="index.html">Fő oldal</a>
+                        <a id="gone" class="navbutton" href="game.html"><B>Játék</B></a>
+                        <a id="gone" class="navbutton" href="about.html">Készítők</a>
             <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
             <label for="checkbox1">
                 <div class="hamburger hamburger1">
@@ -49,11 +31,12 @@
         </button>
         </div>
         <div id="myLinks">
-            <a class="navbutton1" href="index.html">Fő oldal</a>
-            <a class="navbutton1" href="game.html"><b>Játék</b></a>
-            <a class="navbutton1" href="about.html">Készítők</a>
+<a class="navbutton1" href="index.html">Fő oldal</a>
+<a class="navbutton1" href="game.html">Játék</a>
+<a class="navbutton1" href="about.html"><b>Készítők</b></a>
         </div>
     </nav>
+    <div id="overlay"></div>
 <dialog class="colmod" id="colorModal">
     <form method="dialog">
         <label for="color2" class="color-input">Color 1:
@@ -71,6 +54,7 @@
         <button class="color-save" id="saveColors" type="submit"><b>Save Colors</b></button>
     </form>
 </dialog>
+<!-- SOUNDS -->
     <audio id="popSound" src="sounds/pop.mp3"></audio>
     <audio id="loseSound" src="sounds/lose.mp3"></audio>
     <audio id="winSound" src="sounds/win.mp3"></audio>
@@ -78,7 +62,7 @@
     <div id="color-picker"></div>
     
     <div id="center">
-        
+     <!--BUTTONS  -->
         <button id="restart-button">Restart</button>
         <div class="butos">
         <button class="colormodal" id="openColorModal"><i class="fa-solid fa-palette"></i></button>
@@ -90,6 +74,8 @@
                 <option  value="hun">HUN</option>
             </select>
         </div>
+        <button class="opendial" id="showDialogButton">Dev Mode</button>
+<!-- MODALS -->
     <div id="win-modal">
         <h2>Congratulations! You've won!</h2>
         <button id="win-modal-restart">Play Again</button>
@@ -99,59 +85,15 @@
         <button id="lose-modal-restart">Try Again</button>
     </div>
     <div class="star-container"></div>
-    <button class="opendial" id="showDialogButton">Dev Mode</button>
-
-  
-    <!-- Modal dialog -->
-    <dialog id="passwordDialog" class="modaleds">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Enter Password</h2>
-      <input class="passin" type="password" id="passwordInput">
-      <button class="submitbtn" onclick="checkPassword()">Submit</button>
-    </dialog>
-  
-    <script>
-      const dialog = document.getElementById("passwordDialog");
-      const showDialogButton = document.getElementById("showDialogButton");
-      const closeButton = document.querySelector("#passwordDialog .close");
-  
-      // "Show the dialog" button opens the dialog modally
-      showDialogButton.addEventListener("click", () => {
-        dialog.showModal();
-      });
-      function closeModal() {
-        document.getElementById('overlay').style.display = 'flex';
-        dialog.close();
-      }
-  
-      // "Close" button closes the dialog
-      closeButton.addEventListener("click", () => {
-        dialog.close();
-      });
-  
-      // Function to close the modal
-      function closeModal() {
-        document.getElementById('overlay').style.display = 'none';
-        dialog.close();
-      }
-  
-      // Function to check the password
-      function checkPassword() {
-        var password = document.getElementById('passwordInput').value;
-        // Replace 'yourPassword' with the actual password you want to use
-        if (password === 'test') {
-          // Redirect to another page
-          window.location.href = 'dev.html';
-        } else {
-          alert('Incorrect password. Please try again.');
-        }
-      }
-    </script>
+  </div>
 
 
-
-
-
+  <div id="passwordDialog" class="modaleds">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 class="passtext">Enter Password</h2>
+    <input class="passin" type="password" id="passwordInput">
+    <button class="submitbtn" onclick="checkPassword()">Submit</button>
+  </div>
     <script src="gameasd.js"></script>
 
     <script src="nav.js"></script>

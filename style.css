@@ -1,9 +1,8 @@
 body {
     background-color: rgb(42, 42, 42);
     color: white;
-    font-family: arial;
+    font-family: "Gill Sans", sans-serif !important;
     margin: 0;
-    font-family: "Gill Sans", sans-serif;
 }
 
 h1 {
@@ -15,8 +14,6 @@ h1 {
     border-radius: 16px;
     margin-bottom: 10px !important;
 }
-
-
 
 h1:hover {
     background-color: aliceblue;
@@ -57,19 +54,17 @@ h1:hover {
 .navbutcont {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
 }
 
 .navbutton {
     color: black;
     border-radius: 20%;
-    width: auto;
-    border: 0;
     font-family: "Gill Sans", sans-serif;
     font-size: large;
     padding: 5px;
+    border: none !important;
     background-color: transparent;
-    padding: 5px, 5px;
     text-decoration: none;
     transform: scale(1.1) !important;
 }
@@ -79,8 +74,6 @@ h1:hover {
     animation: scale-up-center 0.4s ease-in-out;
     background-color: transparent;
 }
-
-
 
 .navbutton:after {
     border-radius: 10px;
@@ -100,7 +93,6 @@ a:hover:after {
     width: 100%;
     left: 0;
 }
-
 
 @media only screen and (min-width: 768px) {
     .hamburger {
@@ -179,15 +171,14 @@ a:hover:after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     backdrop-filter: blur(0);
     filter: blur(0);
     transition: filter 0.5s ease, backdrop-filter 0.5s ease;
     pointer-events: none;
+    overflow: hidden;
 }
-
-
 
 #overlay.show {
     background-color: rgba(68, 109, 114, 0.751);
@@ -230,20 +221,30 @@ a:hover:after {
     font-size: 1.5rem;
 }
 
-
-
-
-
 @keyframes dd {
     0% {
-
         backdrop-filter: blur(0px);
     }
 
     100% {
-
         backdrop-filter: blur(10px);
     }
+}
+
+.modaleds {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
 }
 
 .submitbtn {
@@ -258,13 +259,13 @@ a:hover:after {
     border: none;
     transform: scale(1.1);
     transition: background-color 0.3s ease, transform 0.3s cubic-bezier(1, -1, 0.58, 1);
-
 }
 
 .opendial {
     height: 40px;
     width: 115px;
     margin-top: 10px !important;
+    margin-bottom: 10px !important;
     border-radius: 8px;
     cursor: pointer;
     background-color: #596fb7;
@@ -286,7 +287,6 @@ a:hover:after {
 
 @media only screen and (max-width: 768px) {
     .passin {
-        width: calc(50% - 20px);
         padding: 10px;
         margin-top: 10px;
         border: 1px solid #ccc;
@@ -294,35 +294,115 @@ a:hover:after {
         transition: border-color 0.3s;
         font-size: smaller;
     }
+
+    #passwordDialog {
+        width: 50%;
+    }
 }
 
 .close {
     font-size: 2.5rem;
     pointer-events: stroke;
     display: block;
+    transition: transform 0.3s, color 0.3s;
 }
 
-.modaled {
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: stretch;
+.close:hover {
+    transform: scale(1.2);
+    color: rgb(209, 246, 255);
+    cursor: pointer;
+}
 
+.passtext {
+    cursor: default !important;
+}
+
+.show1 {
+    background-color: rgba(68, 109, 114, 0.751);
+    z-index: 1000;
+    backdrop-filter: blur(5px) !important;
+}
+
+.index {
+    margin-top: 1rem;
+}
+
+.pp {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.container {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 20px 1rem 1rem 1rem;
+    background-color: red;
+    border-radius: 35px;
+
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    overflow: hidden;
+    flex-direction: column;
+    color: #000000;
+
+}
+
+.box p {
+    padding: 10px;
+}
+
+.box img {
+    max-width: 100%;
     height: auto;
-    width: 20vh !important;
-    margin-bottom: 50vh;
 }
 
-.modaleds {
-    display: none;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: stretch;
+@media only screen and (max-width: 768px) {
+    .boxes {
+        flex-direction: column;
+    }
+}
 
-    width: 20vh !important;
-    margin-bottom: 50vh;
+.textindabox {
+    text-align: center;
+    padding: 10px;
+    width: 100% !important;
+    border-radius: 0px !important;
+    margin-bottom: 0px !important;
+    padding: 5px;
+}
+
+.textindabox:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+}
+
+.password-container i {
+    margin-left: -30px;
+    /* Adjust as needed */
+    cursor: pointer;
+    color: black !important;
 }

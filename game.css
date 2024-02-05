@@ -4,7 +4,6 @@ body {
     margin: 0;
     background-color: rgb(42, 42, 42);
     color: white;
-    font-family: Arial, sans-serif;
 }
 
 .dark {
@@ -18,28 +17,7 @@ body {
     align-items: center;
 }
 
-.navbar {
-    width: auto;
-    background-color: aliceblue;
-    height: 50px;
-    padding-right: 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.navtext {
-    margin-left: 5%;
-    text-align: left;
-    text-decoration: none;
-    color: #000000;
-}
-
-.navbutcont {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
 
 #language {
     background-color: #596fb7;
@@ -48,14 +26,12 @@ body {
     color: white;
     transition: 0.3s ease;
     size: 10px;
-
+    border-color: transparent !important;
 }
-
 
 #language:hover {
     background-color: #11235a;
     transform: scale(1.1);
-
 }
 
 .langs {
@@ -69,19 +45,12 @@ body {
     border-radius: 10px;
     border-color: transparent;
     color: white;
-    transform: scale(1.1);
+    width: 20%;
     font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 30%;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: center;
-    box-shadow:
-        2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02),
-        6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028),
-        12.5px 12.5px 10px rgba(255, 255, 255, 0.035),
-        22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042),
-        41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05),
-        100px 100px 80px rgba(255, 255, 255, 0.07);
+    box-shadow: 2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02), 6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028), 12.5px 12.5px 10px rgba(255, 255, 255, 0.035), 22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042), 41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05), 100px 100px 80px rgba(255, 255, 255, 0.07);
 }
 
 .colmod {
@@ -96,13 +65,7 @@ body {
     padding-right: 10px;
     width: 30%;
     text-align: center;
-    box-shadow:
-        2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02),
-        6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028),
-        12.5px 12.5px 10px rgba(255, 255, 255, 0.035),
-        22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042),
-        41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05),
-        100px 100px 80px rgba(255, 255, 255, 0.07);
+    box-shadow: 2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02), 6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028), 12.5px 12.5px 10px rgba(255, 255, 255, 0.035), 22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042), 41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05), 100px 100px 80px rgba(255, 255, 255, 0.07);
 }
 
 .color-save {
@@ -118,14 +81,12 @@ body {
 }
 
 .color-input {
-    border-radius: 70%;
+    border-radius: 35px;
     margin-bottom: -8px;
     border-color: transparent;
     border: none;
     padding: 0;
     overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
     box-sizing: unset;
     background-color: transparent;
 }
@@ -143,8 +104,6 @@ body {
     height: 50px;
 }
 
-
-
 .butos {
     display: flex;
     flex-direction: row;
@@ -153,8 +112,7 @@ body {
     align-items: flex-start;
     align-content: center;
     gap: 1px;
-    margin-top: 10PX;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 a:hover:after {
@@ -237,13 +195,7 @@ button:hover {
     transform: translate(-50%, -50%) scale(0);
     padding: 20px;
     border-radius: 8px;
-    box-shadow:
-        2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02),
-        6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028),
-        12.5px 12.5px 10px rgba(255, 255, 255, 0.035),
-        22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042),
-        41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05),
-        100px 100px 80px rgba(255, 255, 255, 0.07);
+    box-shadow: 2.8px 2.8px 2.2px rgba(255, 255, 255, 0.02), 6.7px 6.7px 5.3px rgba(255, 255, 255, 0.028), 12.5px 12.5px 10px rgba(255, 255, 255, 0.035), 22.3px 22.3px 17.9px rgba(255, 255, 255, 0.042), 41.8px 41.8px 33.4px rgba(255, 255, 255, 0.05), 100px 100px 80px rgba(255, 255, 255, 0.07);
     z-index: 999;
     text-align: center;
     transition: transform 0.5s ease;
@@ -266,7 +218,6 @@ button:hover {
 #lose-modal h2 {
     margin-bottom: 20px;
     color: #ffffff;
-    filter: blur(0);
 }
 
 #win-modal button,
@@ -334,7 +285,6 @@ button:hover {
     }
 }
 
-
 @media only screen and (max-width: 768px) {
     .navbutton {
         display: none;
@@ -345,5 +295,4 @@ button:hover {
         font-size: 1.5rem;
         background-color: transparent !important;
     }
-
 }

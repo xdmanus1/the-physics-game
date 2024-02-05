@@ -5,5 +5,9 @@
     "title": "The Physics Game",
     "maker": "Made by: Karsa Hunor Ákos",
     "loseModalTitle": "You Lose!",
-    "color": "Szín"
+    "colorText": "Color:",
+    "colorLabel": "Color:",
+    "passwordDialogTitle": "Enter Password",
+    "submit": "Submit",
+    "saveColor": "Save Color"
 }
